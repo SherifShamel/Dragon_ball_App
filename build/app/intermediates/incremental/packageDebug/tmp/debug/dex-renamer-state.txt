@@ -1,0 +1,4 @@
+#Sun May 19 11:59:07 EEST 2024
+base.0=C\:\\Users\\sheri\\StudioProjects\\test_layout_switch\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+path.0=classes.dex
+renamed.0=classes.dex
