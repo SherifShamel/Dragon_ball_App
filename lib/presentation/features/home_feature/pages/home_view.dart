@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:test_layout_switch/domain/entities/home_data.dart';
-import 'package:test_layout_switch/main.dart';
-import 'package:test_layout_switch/presentation/features/home_feature/pages/character_view.dart';
 import 'package:test_layout_switch/presentation/features/home_feature/view_model/cubit.dart';
 import 'package:test_layout_switch/presentation/features/home_feature/view_model/states.dart';
-import 'package:test_layout_switch/presentation/features/home_feature/widgets/custom_drawer.dart';
 import 'package:test_layout_switch/presentation/features/home_feature/widgets/home_widget.dart';
 
 class HomeView extends StatefulWidget {

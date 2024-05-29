@@ -1,12 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_carousel_widget/flutter_carousel_widget.dart';
-import 'package:test_layout_switch/presentation/features/home_feature/view_model/cubit.dart';
 
 import '../../../../core/config/constants.dart';
 import '../../../../domain/entities/home_data.dart';
-import '../view_model/states.dart';
-import '../widgets/character_image_view.dart';
 
 class CharacterView extends StatefulWidget {
   const CharacterView({
