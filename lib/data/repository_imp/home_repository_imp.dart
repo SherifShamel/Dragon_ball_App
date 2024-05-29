@@ -10,7 +10,7 @@ import 'package:test_layout_switch/domain/repository/home_repository.dart';
 class HomeRepositoryImp implements HomeRepository {
   final HomeDataSource homeDataSource;
 
-  HomeRepositoryImp(this.homeDataSource);
+  HomeRepositoryImp({required this.homeDataSource});
 
   @override
   Future<Either<Failure, List<HomeData>>> getData() async {
