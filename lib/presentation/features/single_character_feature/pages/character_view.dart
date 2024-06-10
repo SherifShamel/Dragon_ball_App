@@ -63,37 +63,35 @@ class _CharacterViewState extends State<CharacterView> {
             //     );
             //   },
             // )
-            Expanded(
-              child: BlocBuilder<CharacterViewModel, CharacterStates>(
-                bloc: vm..getData(args.id.toString()),
-                builder: (context, state) {
-                  switch (state) {
-                    case CharacterLoadingState():
-                      {
-                        return const CircularProgressIndicator();
-                      }
-                    case CharacterErrorState():
-                      {
-                        return const Text("Error");
-                      }
-                    case CharacterSuccessState():
-                      {
-                        var data = state.transformationData;
-                        return data.isNotEmpty
-                            ? Expanded(
-                                child: ListView.builder(
-                                    itemCount: data.length,
-                                    itemBuilder: (buildContext, index) =>
-                                        TransformationsWidget(
-                                            transformationData: data[index])),
-                              )
-                            : Center(
-                                child:
-                                    Text("No Transformation for ${args.name}"));
-                      }
-                  }
-                },
-              ),
+            BlocBuilder<CharacterViewModel, CharacterStates>(
+              bloc: vm..getData(args.id.toString()),
+              builder: (context, state) {
+                switch (state) {
+                  case CharacterLoadingState():
+                    {
+                      return const Center(child: CircularProgressIndicator());
+                    }
+                  case CharacterErrorState():
+                    {
+                      return const Center(child: Text("Error"));
+                    }
+                  case CharacterSuccessState():
+                    {
+                      var data = state.transformationData;
+                      return data.isNotEmpty
+                          ? Expanded(
+                              child: ListView.builder(
+                                  itemCount: data.length,
+                                  itemBuilder: (buildContext, index) =>
+                                      TransformationsWidget(
+                                          transformationData: data[index])),
+                            )
+                          : Center(
+                              child:
+                                  Text("No Transformation for ${args.name}"));
+                    }
+                }
+              },
             )
           ],
         ),
