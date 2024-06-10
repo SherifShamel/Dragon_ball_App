@@ -17,23 +17,20 @@ class HomeViewModel extends Cubit<HomeStates> {
   late HomeRepository homeRepository;
   late HomeUseCase homeUseCase;
 
-  Future<bool> getData() async {
+  Future<bool> getData(String? id) async {
     emit(LoadingHomeState());
 
     homeDataSource = HomeDataSourceImp(dio: _webServices.freeDio);
     homeRepository = HomeRepositoryImp(homeDataSource: homeDataSource);
     homeUseCase = HomeUseCase(homeRepository);
 
-    final result = await homeUseCase.execute();
-    EasyLoading.show();
+    final result = await homeUseCase.execute(id);
 
     return result.fold((fail) {
-      // EasyLoading.dismiss();
       var error = fail as ServerFailure;
       emit(ErrorHomeState(error.message ?? ""));
       return Future.value(false);
     }, (data) {
-      // EasyLoading.dismiss();
 
       emit(SuccessHomeState(data));
       // ignore: null_argument_to_non_null_type

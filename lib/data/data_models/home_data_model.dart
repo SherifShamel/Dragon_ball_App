@@ -19,17 +19,3 @@ class HomeDataModel extends HomeData {
         // transformationData: json["transformations"],
       );
 }
-
-class TransformationsModel extends TransformationData {
-  TransformationsModel({
-    required super.id,
-    required super.name,
-    required super.imageUrl,
-  });
-  factory TransformationsModel.fromJson(Map<String, dynamic> json) => TransformationsModel(
-    id: json["id"],
-    imageUrl: json["image"],
-    name: json["name"],
-  );
-
-}

@@ -8,7 +8,7 @@ class HomeUseCase {
   final HomeRepository homeRepository;
   HomeUseCase(this.homeRepository);
 
-  Future<Either<Failure, List<HomeData>>> execute() async {
-    return await homeRepository.getData();
+  Future<Either<Failure, List<HomeData>>> execute(String? id) async {
+    return await homeRepository.getData(id);
   }
 }

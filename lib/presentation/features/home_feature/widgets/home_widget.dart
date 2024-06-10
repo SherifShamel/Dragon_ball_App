@@ -23,7 +23,7 @@ class _HomeWidgetState extends State<HomeWidget> {
       onTap: () {
         navigatorKey.currentState?.pushNamed(
           PageRouteName.character,
-          arguments: widget.homeData,
+          arguments: widget.homeData
         );
       },
       child: Stack(

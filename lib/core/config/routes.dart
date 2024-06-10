@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../presentation/features/home_feature/pages/character_view.dart';
 import '../../presentation/features/home_feature/pages/home_view.dart';
+import '../../presentation/features/single_character_feature/pages/character_view.dart';
 import '../../presentation/features/splash_feature/splash_view.dart';
 import 'page_route_names.dart';
 

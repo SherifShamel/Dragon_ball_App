@@ -16,7 +16,7 @@ class _HomeViewState extends State<HomeView> {
 
   @override
   void initState() {
-    vm.getData();
+    vm.getData("");
     super.initState();
   }
 

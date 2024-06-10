@@ -7,9 +7,9 @@ class HomeDataSourceImp implements HomeDataSource {
   HomeDataSourceImp({required this.dio});
 
   @override
-  Future<Response> getData() async {
+  Future<Response> getData(String? id) async {
     return await dio.get(
-      '/api/characters/',
+      '/api/characters/$id',
     );
   }
 }

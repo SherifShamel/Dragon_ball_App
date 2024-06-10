@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
 
 abstract class HomeDataSource {
-  Future<Response> getData();
+  Future<Response> getData(String? id);
 }
