@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:test_layout_switch/core/config/constants.dart';
 import 'package:test_layout_switch/core/config/page_route_names.dart';
-import 'package:test_layout_switch/core/config/routes.dart';
 import 'package:test_layout_switch/main.dart';
 
 class SplashView extends StatefulWidget {
@@ -24,8 +23,8 @@ class _SplashViewState extends State<SplashView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Image.network(
-        "https://dragonball-api.com/planetas/Planeta_Vegeta_en_Dragon_Ball_Super_Broly.webp",
+      body: Image.asset(
+        "assets/img/shenron_splash.jpeg",
         width: Constants.mediaQuery.width,
         height: Constants.mediaQuery.height,
         fit: BoxFit.cover,

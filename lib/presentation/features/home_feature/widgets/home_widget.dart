@@ -21,10 +21,8 @@ class _HomeWidgetState extends State<HomeWidget> {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        navigatorKey.currentState?.pushNamed(
-          PageRouteName.character,
-          arguments: widget.homeData
-        );
+        navigatorKey.currentState
+            ?.pushNamed(PageRouteName.character, arguments: widget.homeData);
       },
       child: Stack(
         alignment: Alignment.center,

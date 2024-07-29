@@ -1,6 +1,4 @@
-import 'package:dio/dio.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:test_layout_switch/core/failure/failures.dart';
 import 'package:test_layout_switch/core/web_services.dart/web_services.dart';
 import 'package:test_layout_switch/data/data_source/character_data_source.dart';
 import 'package:test_layout_switch/data/data_source/character_data_source_imp.dart';
@@ -32,7 +30,6 @@ class CharacterViewModel extends Cubit<CharacterStates> {
     return result.fold(
       (fail) {
         emit(CharacterErrorState());
-        print("Still waiting!!!!!!!!!!");
         return Future.value(false);
       },
       (data) {

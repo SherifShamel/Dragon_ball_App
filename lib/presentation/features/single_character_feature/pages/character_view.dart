@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:test_layout_switch/generated/assets.dart';
 import 'package:test_layout_switch/presentation/features/single_character_feature/view_model/cubit.dart';
 import 'package:test_layout_switch/presentation/features/single_character_feature/widgets/transformations_widget.dart';
 import '../../../../core/config/constants.dart';
@@ -29,7 +30,7 @@ class _CharacterViewState extends State<CharacterView> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             SizedBox(
-              height: Constants.mediaQuery.height * 0.4,
+              height: Constants.mediaQuery.height * 0.3,
               child: Image.network(args.imageUrl),
             ),
             Text(
@@ -44,32 +45,13 @@ class _CharacterViewState extends State<CharacterView> {
             Text(
               "Gender: ${args.gender}",
             ),
-            // FutureBuilder(
-            //   future: vm.getData(args.id.toString()),
-            //   builder: (context, snapshot) {
-            //     if (snapshot.hasError) {
-            //       return const Text("Error");
-            //     }
-            //     if (snapshot.connectionState == ConnectionState.waiting) {
-            //       return const CircularProgressIndicator();
-            //     }
-            //     var data = snapshot.data as List;
-            //     return Expanded(
-            //       child: ListView.builder(
-            //         itemCount: 3,
-            //         itemBuilder: (buildContext, index) =>
-            //             TransformationsWidget(transformationData: data?[index]),
-            //       ),
-            //     );
-            //   },
-            // )
             BlocBuilder<CharacterViewModel, CharacterStates>(
               bloc: vm..getData(args.id.toString()),
               builder: (context, state) {
                 switch (state) {
                   case CharacterLoadingState():
                     {
-                      return const Center(child: CircularProgressIndicator());
+                      return Center(child: Image.asset(Assets.imgLoading));
                     }
                   case CharacterErrorState():
                     {
@@ -81,14 +63,16 @@ class _CharacterViewState extends State<CharacterView> {
                       return data.isNotEmpty
                           ? Expanded(
                               child: ListView.builder(
-                                  itemCount: data.length,
-                                  itemBuilder: (buildContext, index) =>
-                                      TransformationsWidget(
-                                          transformationData: data[index])),
+                                itemCount: data.length,
+                                itemBuilder: (buildContext, index) =>
+                                    TransformationsWidget(
+                                  transformationData: data[index],
+                                ),
+                              ),
                             )
                           : Center(
-                              child:
-                                  Text("No Transformation for ${args.name}"));
+                              child: Text("No Transformation for ${args.name}"),
+                            );
                     }
                 }
               },

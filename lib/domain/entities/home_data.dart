@@ -5,6 +5,7 @@ class HomeData {
   final String race;
   final String gender;
   final String imageUrl;
+  // final List transformationData;
 
   HomeData({
     required this.id,
@@ -12,5 +13,6 @@ class HomeData {
     required this.imageUrl,
     required this.name,
     required this.race,
+    // required this.transformationData
   });
 }

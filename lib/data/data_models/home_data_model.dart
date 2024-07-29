@@ -18,4 +18,5 @@ class HomeDataModel extends HomeData {
         race: json["race"],
         // transformationData: json["transformations"],
       );
+
 }

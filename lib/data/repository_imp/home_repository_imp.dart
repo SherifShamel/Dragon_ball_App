@@ -13,9 +13,9 @@ class HomeRepositoryImp implements HomeRepository {
   HomeRepositoryImp({required this.homeDataSource});
 
   @override
-  Future<Either<Failure, List<HomeData>>> getData(String? id) async {
+  Future<Either<Failure, List<HomeData>>> getData() async {
     try {
-      final response = await homeDataSource.getData(id);
+      final response = await homeDataSource.getData();
       if (response.statusCode == 200) {
         List<HomeDataModel> homeDataList = [];
 

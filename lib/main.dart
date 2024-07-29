@@ -19,6 +19,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
+      debugShowCheckedModeBanner: false,
       initialRoute: PageRouteName.initial,
       onGenerateRoute: Routes.onGenerateRoute,
       navigatorKey: navigatorKey,

@@ -1,6 +1,5 @@
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
-import 'package:test_layout_switch/core/failure/failure.dart';
 import 'package:test_layout_switch/core/failure/failures.dart';
 import 'package:test_layout_switch/data/data_models/transformation_data_model.dart';
 import 'package:test_layout_switch/data/data_source/character_data_source.dart';

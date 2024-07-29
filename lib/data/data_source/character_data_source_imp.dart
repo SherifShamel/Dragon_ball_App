@@ -1,5 +1,4 @@
 import 'package:dio/dio.dart';
-import 'package:dio/src/response.dart';
 import 'package:test_layout_switch/data/data_source/character_data_source.dart';
 
 class CharacterDataSourceImp implements CharacterDataSource {
