@@ -5,6 +5,7 @@ import 'package:test_layout_switch/presentation/features/home_feature/view_model
 import 'package:test_layout_switch/presentation/features/home_feature/view_model/states.dart';
 import 'package:test_layout_switch/presentation/features/home_feature/widgets/home_widget.dart';
 
+import '../../../../core/config/constants.dart';
 import '../../../../generated/assets.dart';
 
 class HomeView extends StatefulWidget {
@@ -15,7 +16,6 @@ class HomeView extends StatefulWidget {
 }
 
 class _HomeViewState extends State<HomeView> {
-
   var vm = HomeViewModel();
 
   @override
@@ -28,7 +28,23 @@ class _HomeViewState extends State<HomeView> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        drawer: Drawer(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Container(
+                padding: const EdgeInsets.all(10),
+                height: 70,
+                child: ElevatedButton(
+                  onPressed: () {},
+                  child: const Text("Planets"),
+                ),
+              ),
+            ],
+          ),
+        ),
         appBar: AppBar(
+            backgroundColor: Constants.themeData.primaryColor,
           title: const Text("Dragon Ball App"),
           actions: [
             IconButton(
